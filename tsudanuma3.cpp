@@ -3,15 +3,14 @@ using namespace std;
 
 int main()
 {
-	string a,b,c;
-	int maru[1000];
-	int fg = 0;
+	string str1,str2;
+	cin >> str1 >> str2;
 
-	cin >> a >> b;
+	int n1,n2,n;
+	n1 = str1.size(); 
+	n2 = str2.size();
 
-	int n1,n2,n,n3;
-	n1 = a.size(); 	//n1 文字数
-	n2 = b.size();
+	printf("\n");
 
 	if(n1 > n2)
 		n = n1;
@@ -24,77 +23,45 @@ int main()
 	{
 		for(int i = 0; i < n;i++)
 		{
-			if(a[i] == b[i])
+			if(str1[i] != str2[i])
 			{
-				maru[fg] = 1;
-				fg++;
-			}
-		
-			else if(a[i] != b[i])
-			{
-				maru[fg] = 0;
-				fg++;
-				b.insert(i," ");
+				str2.insert(i," ");
 			}
 		}
-		cout << a << endl;	//加工済み状態で出力
-		cout << b << endl;
+		cout << str1 << endl;
+		cout << str2 << endl;
 	}	
 	
 	else if(n1 < n2)
 	{
 		for(int i = 0; i < n;i++)
 		{
-			if(b[i] == a[i])
+			if(str2[i] != str1[i])
 			{
-				maru[fg] = 1;
-				fg++;
-			}
-		
-			else if(b[i] != a[i])
-			{
-				maru[fg] = 0;
-				fg++;
-				a.insert(i," ");
+				str1.insert(i," ");
 			}
 		}
 
-		cout << a << endl;
-		cout << b << endl;
+		cout << str1 << endl;
+		cout << str2 << endl;
 	}
 
 	else if(n1 == n2)
 	{
-		for(int i = 0; i < n;i++)
-		{
-			if(a[i] == b[i])
-			{
-				maru[fg] = 1;
-				fg++;
-			}
-		
-			else if(a[i] != b[i])
-			{
-				maru[fg] = 0;
-				fg++;
-			}
-		}
-		cout << a << endl;
-		cout << b << endl;
+		cout << str1 << endl;
+		cout << str2 << endl;
 	}
 	
-
 	for(int i = 0; i < n; i++)
 	{
-		if(a[i] == b[i])
+		if(str1[i] == str2[i])
 		{
-			cout << "○";
+			cout << "o";
 		}
 		else
 		{
-			cout << "✗;";
+			cout << "x";
 		}
 	}
-
 	cout << endl;
 } 
